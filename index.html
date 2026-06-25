@@ -121,6 +121,19 @@
   .menu-foot{margin-top:20px;color:var(--dim);font-size:13.5px}
   .menu-foot .todo{color:#c9972f}
   @media(max-width:780px){.menu-grid{grid-template-columns:1fr}}
+  /* IAS 진단 프로그램 */
+  .prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
+  .prog{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px 20px;transition:.16s}
+  .prog:hover{border-color:var(--line2)}
+  .prog.wide{grid-column:1 / -1}
+  .prog .ptag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.02em;padding:4px 10px;border-radius:6px;margin-bottom:12px}
+  .prog b{display:block;font-size:15px;font-weight:600;line-height:1.5;color:var(--txt)}
+  .prog b .sub{display:block;font-size:12.5px;font-weight:500;color:var(--muted);margin-top:5px}
+  .ptag.t-hi{color:#6f9bff;background:rgba(111,155,255,.13)}
+  .ptag.t-mid{color:#54c7b8;background:rgba(84,199,184,.13)}
+  .ptag.t-gen{color:#d6a95b;background:rgba(214,169,91,.13)}
+  .ptag.t-int{color:#a78bfa;background:rgba(167,139,250,.13)}
+  @media(max-width:780px){.prog-grid{grid-template-columns:1fr}.prog.wide{grid-column:auto}}
 
   /* INSTRUCTOR */
   .inst-in{display:grid;grid-template-columns:300px 1fr;gap:50px;align-items:center}
@@ -272,23 +285,15 @@
 <section class="menu" id="consulting">
   <div class="wrap">
     <div class="label">오프라인 컨설팅 · 유료</div>
-    <h2>중등부터 대학까지, 단계별로.</h2>
-    <div class="menu-grid">
-      <div class="col">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/></svg></div>
-        <h3>중등</h3><div class="who">영재고·과학고·경시</div>
-        <ul><li>영재고·과학고·전국단위 자사고 적합도</li><li>KMO 준비 적합도 체크</li><li>학원 선행 진도 체크</li></ul>
-      </div>
-      <div class="col">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19V5a1 1 0 011-1h11l4 4v11a1 1 0 01-1 1H5a1 1 0 01-1-1z"/><path d="M8 9h6M8 13h8"/></svg></div>
-        <h3>고등</h3><div class="who">정시·수리논술·팀수업</div>
-        <ul><li>고1·2 정시 대비 적합도</li><li>수리논술 적합도 체크</li><li>고1~3 팀수업</li></ul>
-      </div>
-      <div class="col">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M7 9v5c0 1.5 2.5 3 5 3s5-1.5 5-3V9"/><path d="M21 7v6"/></svg></div>
-        <h3>대학</h3><div class="who">미적분·편입·국제코스</div>
-        <ul><li>미적분학·해석학</li><li>편입 수학</li><li>AP Calculus (국제코스)</li></ul>
-      </div>
+    <h2>IAS 진단 프로그램</h2>
+    <div class="prog-grid">
+      <div class="prog"><span class="ptag t-hi">고등 · 의학계열</span><b>의학계열 수리논술 적합성 진단</b></div>
+      <div class="prog"><span class="ptag t-hi">고등 · 수리논술</span><b>수리논술 / 약술형 논술 적합성 진단</b></div>
+      <div class="prog"><span class="ptag t-hi">고등 · 수능정시</span><b>고1·2 조기 정시대비 / 고3 정시올인 적합성 진단</b></div>
+      <div class="prog"><span class="ptag t-mid">중등 · 영재</span><b>KMO / 영재고 / 과학고 준비 적합성 진단</b></div>
+      <div class="prog"><span class="ptag t-mid">중등 · 전사고</span><b>전국단위 · 강남권 자사고 준비 적합성 진단</b></div>
+      <div class="prog"><span class="ptag t-gen">종합 진단</span><b>초등 고학년↑ · 학년무관 학원 선행진도 · 종합 체크<span class="sub">초등은 웩슬러 지능검사지 제출 권장</span></b></div>
+      <div class="prog wide"><span class="ptag t-int">AP / IB 국제트랙</span><b>리터니 · 국제학교 학생 대상 맞춤 학습 로드맵</b></div>
     </div>
     <p class="menu-foot">이용 형태 — 1회 단발성 진단 · 월 1회 정기 체크 (유료 · 상담 시 안내) &nbsp;|&nbsp;
       오프라인 — 강남구 테헤란로 138 성홍타워 (역삼역 도보)</p>
