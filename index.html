@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이현 수학입시컨설팅 — 막연한 도전 대신, 정확한 진단부터</title>
+<meta name="description" content="유니스터디(메가스터디 대학인강) 미적분학 대표강사 이현의 수학 적합도 진단 컨설팅. 영재고·수리논술·심화수학, 지금 도전해도 될지 정확히 진단합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --bg:#0c0d10; --panel:#121419; --panel2:#171a20;
+    --line:#242832; --line2:#323743;
+    --txt:#e7e9ee; --muted:#9aa0ac; --dim:#646b78;
+    --blue:#6f9bff; --blue-fill:#3461d6; --blue-fill-h:#3f6ee6;
+    --serif:"Noto Serif KR",serif;
+    --sans:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+    --max:1060px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.62;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  section{padding:80px 0}
+  .label{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
+  .label::before{content:"";width:26px;height:1px;background:var(--line2)}
+  h2{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.4;letter-spacing:-.01em}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:12px 20px;border-radius:9px;border:1px solid transparent;transition:.16s;cursor:pointer;line-height:1}
+  .btn svg{width:16px;height:16px}
+  .btn-primary{background:var(--blue-fill);color:#fff;font-weight:700}
+  .btn-primary:hover{background:var(--blue-fill-h)}
+  .btn-line{background:transparent;color:var(--txt);border-color:var(--line2)}
+  .btn-line:hover{border-color:var(--blue);color:#fff}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(12,13,16,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:var(--max);margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-weight:700;font-size:16px;letter-spacing:-.01em}
+  .brand .ln{color:var(--blue)}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{color:var(--muted);font-size:14.5px;font-weight:500}
+  .nav-links a:hover{color:var(--txt)}
+  .nav-links a.cta{color:var(--blue);font-weight:600}
+  @media(max-width:780px){.nav-links a:not(.cta){display:none}}
+
+  /* HERO */
+  .hero{border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-30%;right:-10%;width:520px;height:520px;
+    background:radial-gradient(circle,rgba(80,120,230,.16),transparent 62%);pointer-events:none}
+  .hero-in{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;padding:92px 28px 84px;position:relative}
+  .hero .kicker{color:var(--muted);font-size:14px;font-weight:500;margin-bottom:22px}
+  .hero .kicker b{color:var(--txt);font-weight:600}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:46px;line-height:1.34;letter-spacing:-.015em}
+  .hero h1 em{font-style:normal;color:var(--blue);position:relative}
+  .hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.10em;background:rgba(111,155,255,.28)}
+  .hero .sub{margin:26px 0 32px;color:var(--muted);font-size:17px;max-width:480px;line-height:1.7}
+  .hero .sub b{color:var(--txt);font-weight:600}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .portrait{position:relative;justify-self:end}
+  .portrait .frame{border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:var(--panel);width:262px}
+  .portrait .frame img{width:100%;display:block}
+  .portrait .cap{border-top:1px solid var(--line);padding:13px 16px;font-size:13px;color:var(--muted)}
+  .portrait .cap b{color:var(--txt);font-weight:600;display:block;font-size:14px;margin-bottom:1px}
+  .portrait .cap.m{display:none}
+  @media(max-width:780px){
+    .hero-in{grid-template-columns:1fr;gap:22px;padding:46px 28px 56px;text-align:center}
+    .hero .kicker{margin-bottom:16px}
+    .hero h1{font-size:31px;line-height:1.42}
+    .hero .sub{font-size:15.5px;margin:18px auto 26px}
+    .hero-cta{justify-content:center}
+    .hero-cta .btn{flex:1;justify-content:center}
+    .portrait{order:-1;justify-self:center;display:flex;flex-direction:column;align-items:center;gap:13px}
+    .portrait .frame{width:116px;border-radius:50%}
+    .portrait .frame .cap{display:none}
+    .portrait .cap.m{display:block;border:0;padding:0;font-size:13.5px;text-align:center}
+    .portrait .cap.m b{display:inline;font-size:14px}
+  }
+
+  /* PAIN — editorial list */
+  .pain{background:var(--panel)}
+  .pain-head{max-width:560px;margin-bottom:42px}
+  .pain-head h2{margin-top:6px}
+  .pain-list{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+  .qa{display:flex;gap:18px;padding:24px 0;border-top:1px solid var(--line)}
+  .qa .num{flex:none;font-family:var(--serif);font-size:15px;color:var(--blue);padding-top:2px;width:24px}
+  .qa h3{font-size:16.5px;font-weight:600;margin-bottom:5px;line-height:1.5}
+  .qa p{color:var(--muted);font-size:14.5px;line-height:1.62}
+  @media(max-width:780px){.pain-list{grid-template-columns:1fr;gap:0}}
+
+  /* CONCEPT */
+  .concept-in{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .concept .body{color:var(--muted);font-size:16px;line-height:1.78;margin-top:6px}
+  .concept .body b{color:var(--txt);font-weight:600}
+  .flow{display:flex;flex-direction:column}
+  .flow .row{display:flex;gap:18px;padding:20px 0;position:relative}
+  .flow .row:not(:last-child)::after{content:"";position:absolute;left:13px;top:46px;bottom:-20px;width:1px;background:var(--line2)}
+  .flow .mk{flex:none;width:27px;height:27px;border-radius:50%;border:1px solid var(--line2);background:var(--bg);
+    color:var(--blue);font-family:var(--serif);font-size:14px;display:flex;align-items:center;justify-content:center;z-index:1}
+  .flow b{display:block;font-size:16px;margin-bottom:2px}
+  .flow span{color:var(--muted);font-size:14.5px}
+  @media(max-width:780px){.concept-in{grid-template-columns:1fr;gap:34px}}
+
+  /* MENU */
+  .menu{background:var(--panel)}
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:38px}
+  .col{background:var(--bg);padding:30px 28px}
+  .col .ic{color:var(--blue);margin-bottom:16px}
+  .col .ic svg{width:24px;height:24px;stroke-width:1.5}
+  .col h3{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:3px}
+  .col .who{color:var(--muted);font-size:13px;margin-bottom:18px}
+  .col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .col li{color:var(--muted);font-size:14.5px;padding-left:16px;position:relative;line-height:1.5}
+  .col li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--line2)}
+  .menu-foot{margin-top:20px;color:var(--dim);font-size:13.5px}
+  .menu-foot .todo{color:#c9972f}
+  @media(max-width:780px){.menu-grid{grid-template-columns:1fr}}
+
+  /* INSTRUCTOR */
+  .inst-in{display:grid;grid-template-columns:300px 1fr;gap:50px;align-items:center}
+  .inst-img{border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:var(--panel)}
+  .inst-img img{width:100%;display:block}
+  .inst h2{margin-bottom:4px}
+  .inst .role{color:var(--blue);font-size:14.5px;font-weight:500;margin-bottom:20px}
+  .inst .bio{color:var(--muted);font-size:15.5px;line-height:1.8;margin-bottom:24px}
+  .inst .bio b{color:var(--txt);font-weight:600}
+  .inst .links{display:flex;gap:12px;flex-wrap:wrap}
+  @media(max-width:780px){.inst-in{grid-template-columns:1fr;gap:26px}.inst-img{max-width:220px}}
+
+  /* STORE */
+  .store{background:var(--panel)}
+  .store-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+  .prod{background:var(--bg);border:1px solid var(--line);border-radius:13px;overflow:hidden;display:flex;flex-direction:column}
+  .cover{aspect-ratio:3/4.1;position:relative;padding:24px;display:flex;flex-direction:column;justify-content:space-between;color:#eef1f6}
+  .cover.c1{background:#16233f}.cover.c2{background:#143230}
+  .cover::before{content:"";position:absolute;inset:13px;border:1px solid rgba(255,255,255,.14);border-radius:4px;pointer-events:none}
+  .cover .cl{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.72;position:relative}
+  .cover .ct{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.32;position:relative}
+  .cover .cb{font-size:12.5px;opacity:.78;position:relative}
+  .pbody{padding:18px 20px;display:flex;flex-direction:column;gap:9px;flex:1;border-top:1px solid var(--line)}
+  .ptags{display:flex;gap:7px;align-items:center}
+  .ptag{font-size:11px;font-weight:600;color:var(--muted)}
+  .ptag.nw{color:var(--blue)}
+  .ptag.dot::before{content:"·";margin-right:7px;color:var(--dim)}
+  .ptitle{font-size:16px;font-weight:600}
+  .pdesc{color:var(--muted);font-size:13.5px;line-height:1.6;flex:1}
+  .pmeta{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px}
+  .price{font-size:16px;font-weight:700}
+  .price.tbd{font-size:13.5px;font-weight:600;color:var(--dim)}
+  .rev{font-size:12.5px;color:var(--dim)}
+  .prod .buy{margin:0 20px 20px;justify-content:center}
+  .prod.soon{border-style:dashed;background:transparent}
+  .prod.soon .cover{background:transparent;border:0;align-items:center;justify-content:center;color:var(--dim)}
+  .prod.soon .cover::before{border-color:var(--line)}
+  @media(max-width:780px){.store-grid{grid-template-columns:1fr;max-width:340px}}
+
+  /* APPLY */
+  .apply-in{border:1px solid var(--line2);border-radius:16px;background:var(--panel);padding:46px 44px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .apply h2{margin:8px 0 12px}
+  .apply p{color:var(--muted);font-size:15.5px;line-height:1.7;max-width:420px}
+  .apply-act{display:flex;flex-direction:column;gap:12px}
+  .apply-act .btn{justify-content:center;padding:15px 20px;font-size:15.5px}
+  .apply-act .note{color:var(--dim);font-size:12.5px;text-align:center;margin-top:2px}
+  @media(max-width:780px){.apply-in{grid-template-columns:1fr;padding:32px 24px;gap:26px}}
+
+  /* CHANNELS */
+  .chan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+  .chan{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:11px;padding:18px;transition:.16s}
+  .chan:hover{border-color:var(--line2)}
+  .chan .ic{flex:none;color:var(--muted)}.chan:hover .ic{color:var(--blue)}
+  .chan .ic svg{width:22px;height:22px}
+  .chan b{display:block;font-size:14.5px;font-weight:600}
+  .chan span{color:var(--dim);font-size:12.5px}
+  @media(max-width:780px){.chan-grid{grid-template-columns:1fr}}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:38px 0;color:var(--dim);font-size:13px}
+  .f-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:flex-end}
+  footer b{color:var(--muted);font-weight:600}
+  .todo-mark{color:#c9972f}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-in">
+    <div class="brand">이현 <span class="ln">수학입시컨설팅</span></div>
+    <nav class="nav-links">
+      <a href="#concept">적합도 컨설팅</a>
+      <a href="#menu">진단 메뉴</a>
+      <a href="#store">전자책</a>
+      <a href="#apply" class="cta">상담 신청 →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <p class="kicker">유니스터디 <b>메가스터디 대학인강</b> 미적분학 대표강사</p>
+      <h1>막연한 도전 대신,<br><em>정확한 진단</em>부터.</h1>
+      <p class="sub">영재고·수리논술·심화수학 — 지금 도전해도 될지,
+        대학수학까지 가르치는 강사가 한 단계 위 기준으로 <b>수학 적합도</b>를 진단합니다.</p>
+      <div class="hero-cta">
+        <a href="#apply" class="btn btn-primary">무료 적합도 상담</a>
+        <a href="#store" class="btn btn-line">전자책 보기</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="frame">
+        <img src="assets/profile.png" alt="이현 강사">
+        <div class="cap"><b>이현</b>연세대 교육대학원</div>
+      </div>
+      <div class="cap m"><b>이현</b> · 연세대 교육대학원</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain" id="pain">
+  <div class="wrap">
+    <div class="pain-head">
+      <div class="label">고민의 시작</div>
+      <h2>도전할지 말지 고민될 때,<br>가장 먼저 필요한 건 진단입니다.</h2>
+    </div>
+    <div class="pain-list">
+      <div class="qa"><div class="num">01</div><div>
+        <h3>영재고·과학고, 도전할 만한가요?</h3>
+        <p>지금 실력으로 준비를 시작해도 될지, 한 단계 위 기준으로 냉정하게 봐야 보입니다.</p></div></div>
+      <div class="qa"><div class="num">02</div><div>
+        <h3>수리논술이 우리 아이에게 맞나요?</h3>
+        <p>정시·수시 사이에서 수리논술 적합도부터 확인하고 전형 전략을 잡습니다.</p></div></div>
+      <div class="qa"><div class="num">03</div><div>
+        <h3>지금 선행 진도, 제대로 가고 있나요?</h3>
+        <p>진도가 빠른 건지 헛도는 건지, 이해의 깊이를 들여다봐야 압니다.</p></div></div>
+      <div class="qa"><div class="num">04</div><div>
+        <h3>편입·AP·대학 미적분, 어디서 막히나요?</h3>
+        <p>대학수학까지 가르치는 강사가 개념의 어느 층에서 끊겼는지 정확히 짚습니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept" id="concept">
+  <div class="wrap concept-in">
+    <div>
+      <div class="label">적합도 컨설팅</div>
+      <h2>수능 점수만으로는<br>보이지 않는 것들.</h2>
+      <p class="body">영재고를 준비할 만한지, 수리논술에 적합한지, 지금의 선행이 맞는지는
+        <b>한 단계 위에서 봐야</b> 정확합니다. 대학수학(미적분학·해석학)까지 가르치는 강사가
+        그 기준으로 학생의 수학을 진단하고, 갈 수 있는 길을 잡아드립니다.</p>
+    </div>
+    <div class="flow">
+      <div class="row"><div class="mk">1</div><div><b>진단</b><span>현재 실력·이해 깊이·적합도를 정밀 점검</span></div></div>
+      <div class="row"><div class="mk">2</div><div><b>방향 설정</b><span>도전 가능 여부와 가장 효율적인 경로 제시</span></div></div>
+      <div class="row"><div class="mk">3</div><div><b>정기 점검</b><span>1회 단발 또는 월 1회 정기 체크로 궤도 유지</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="label">진단 메뉴</div>
+    <h2>중등부터 대학까지, 단계별로.</h2>
+    <div class="menu-grid">
+      <div class="col">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/></svg></div>
+        <h3>중등</h3><div class="who">영재고·과학고·경시</div>
+        <ul><li>영재고·과학고·전국단위 자사고 적합도</li><li>KMO 준비 적합도 체크</li><li>학원 선행 진도 체크</li></ul>
+      </div>
+      <div class="col">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19V5a1 1 0 011-1h11l4 4v11a1 1 0 01-1 1H5a1 1 0 01-1-1z"/><path d="M8 9h6M8 13h8"/></svg></div>
+        <h3>고등</h3><div class="who">정시·수리논술·팀수업</div>
+        <ul><li>고1·2 정시 대비 적합도</li><li>수리논술 적합도 체크</li><li>고1~3 팀수업</li></ul>
+      </div>
+      <div class="col">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M7 9v5c0 1.5 2.5 3 5 3s5-1.5 5-3V9"/><path d="M21 7v6"/></svg></div>
+        <h3>대학</h3><div class="who">미적분·편입·국제코스</div>
+        <ul><li>미적분학·해석학</li><li>편입 수학</li><li>AP Calculus (국제코스)</li></ul>
+      </div>
+    </div>
+    <p class="menu-foot">이용 형태 — 1회 단발성 진단 · 월 1회 정기 체크 &nbsp;|&nbsp;
+      오프라인 지역 <span class="todo">○○○ (확정 예정)</span></p>
+  </div>
+</section>
+
+<!-- INSTRUCTOR -->
+<section class="inst" id="instructor">
+  <div class="wrap inst-in">
+    <div class="inst-img"><img src="assets/lee_hyun.png" alt="이현 강사"></div>
+    <div>
+      <div class="label">강사 소개</div>
+      <h2>이현</h2>
+      <div class="role">유니스터디(메가스터디 대학인강) 미적분학·해석학 대표강사</div>
+      <p class="bio">연세대학교 교육대학원. 수능·내신을 넘어 <b>대학수학까지 가르치는 깊이</b>로,
+        학생이 지금 어디에 서 있고 어디까지 갈 수 있는지를 한 단계 위에서 진단합니다.
+        “미적분학은 이현” — 복잡한 개념을 가장 명쾌하게.</p>
+      <div class="links">
+        <a href="https://www.youtube.com/channel/UC8p2tMegsjm2VUu5EK9yQWA" target="_blank" rel="noopener" class="btn btn-line">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.4-5.2a2.7 2.7 0 00-1.9-1.9C18.9 4.5 12 4.5 12 4.5s-6.9 0-8.7.4a2.7 2.7 0 00-1.9 1.9C1 8.5 1 12 1 12s0 3.5.4 5.2a2.7 2.7 0 001.9 1.9c1.8.4 8.7.4 8.7.4s6.9 0 8.7-.4a2.7 2.7 0 001.9-1.9C23 15.5 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg>
+          유튜브 채널</a>
+        <a href="https://www.unistudy.co.kr/tMain/newton8955" target="_blank" rel="noopener" class="btn btn-line">정규 강의 (유니스터디)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORE -->
+<section class="store" id="store">
+  <div class="wrap">
+    <div class="label">전자책 · PDF 자료</div>
+    <h2>영상으로 부족한 부분은, 자료로.</h2>
+    <div class="store-grid">
+
+      <article class="prod">
+        <div class="cover c1">
+          <div class="cl">Yonsei · 수리논술</div>
+          <div class="ct">연세대<br>수리논술<br>Part 1</div>
+          <div class="cb">2023–2026 기출 풀이</div>
+        </div>
+        <div class="pbody">
+          <div class="ptags"><span class="ptag nw">NEW</span><span class="ptag dot">전자책</span><span class="ptag dot">약 50p</span></div>
+          <div class="ptitle">연세대 수리논술 Part 1</div>
+          <div class="pdesc">2023~2026 연세대 수리논술 기출을 강사 직접 풀이로. 출제 패턴과 접근법까지.</div>
+          <div class="pmeta"><span class="price tbd">가격 준비중</span><span class="rev">출시 예정</span></div>
+        </div>
+        <a href="#apply" class="btn btn-primary buy">구매 문의</a>
+      </article>
+
+      <article class="prod">
+        <div class="cover c2">
+          <div class="cl">AP · Calculus</div>
+          <div class="ct">AP Calculus<br>Part 1</div>
+          <div class="cb">Precalculus Algebra</div>
+        </div>
+        <div class="pbody">
+          <div class="ptags"><span class="ptag nw">NEW</span><span class="ptag dot">전자책</span><span class="ptag dot">약 50p</span></div>
+          <div class="ptitle">AP Calculus Part 1</div>
+          <div class="pdesc">Precalculus Algebra. AP·국제코스 학생을 위한 기초 대수 완성 자료.</div>
+          <div class="pmeta"><span class="price tbd">가격 준비중</span><span class="rev">출시 예정</span></div>
+        </div>
+        <a href="#apply" class="btn btn-primary buy">구매 문의</a>
+      </article>
+
+      <article class="prod soon">
+        <div class="cover"><span>다음 자료<br>준비중</span></div>
+        <div class="pbody">
+          <div class="ptitle" style="color:var(--dim)">순차 공개 예정</div>
+          <div class="pdesc">수리논술 Part 2, AP Calculus Part 2 등.</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="apply" id="apply">
+  <div class="wrap">
+    <div class="apply-in">
+      <div>
+        <div class="label">무료 상담</div>
+        <h2>적합도 상담 신청</h2>
+        <p>신청서를 남겨주시면 현재 위치와 갈 수 있는 길을 진단해 연락드립니다.
+          영재고·수리논술·정시·편입·AP, 무엇이든.</p>
+      </div>
+      <div class="apply-act">
+        <!-- TODO: 구글폼 생성 후 href 교체 -->
+        <a href="#" class="btn btn-primary">상담 신청서 작성하기 →</a>
+        <!-- TODO: 카카오 채널 링크 교체 -->
+        <a href="#" class="btn btn-line">카카오톡으로 문의</a>
+        <span class="note">신청은 무료입니다 · 접수 후 일정 안내</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section class="channels" id="channels">
+  <div class="wrap">
+    <div class="label">채널</div>
+    <h2>매일의 수학은 여기에서.</h2>
+    <div class="chan-grid">
+      <a class="chan" href="https://www.youtube.com/channel/UC8p2tMegsjm2VUu5EK9yQWA" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.4-5.2a2.7 2.7 0 00-1.9-1.9C18.9 4.5 12 4.5 12 4.5s-6.9 0-8.7.4a2.7 2.7 0 00-1.9 1.9C1 8.5 1 12 1 12s0 3.5.4 5.2a2.7 2.7 0 001.9 1.9c1.8.4 8.7.4 8.7.4s6.9 0 8.7-.4a2.7 2.7 0 001.9-1.9C23 15.5 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg></span>
+        <div><b>유튜브</b><span>이현 미적분 · 강의·풀이 영상</span></div></a>
+      <a class="chan" href="#" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <div><b>인스타그램</b><span class="todo-mark">핸들 준비중</span></div></a>
+      <a class="chan" href="#">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 7 0 10-3.4 5.6L21 18l-.9-3a6.8 6.8 0 00.9-3.5z"/></svg></span>
+        <div><b>카카오 채널</b><span class="todo-mark">상담·문의 준비중</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap f-in">
+    <div><b>이현 수학입시컨설팅</b><br>
+      <span class="todo-mark">상호 / 사업자등록번호 / 연락처 — 확정 예정</span></div>
+    <div>© 2026 이현 수학입시컨설팅</div>
+  </div>
+</footer>
+
+</body>
+</html>
