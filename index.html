@@ -94,6 +94,10 @@
   .concept-in{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
   .concept .body{color:var(--muted);font-size:16px;line-height:1.78;margin-top:6px}
   .concept .body b{color:var(--txt);font-weight:600}
+  .ias-def{margin:18px 0 20px;padding:15px 18px;border:1px solid var(--line2);border-radius:11px;background:var(--bg);font-size:14.5px;line-height:1.5}
+  .ias-def b{font-family:var(--serif);font-weight:700;color:var(--blue);letter-spacing:.04em;font-size:16px}
+  .ias-def .en{color:var(--muted);margin-left:8px}
+  .ias-def .ko{display:block;color:var(--txt);margin-top:5px}
   .flow{display:flex;flex-direction:column}
   .flow .row{display:flex;gap:18px;padding:20px 0;position:relative}
   .flow .row:not(:last-child)::after{content:"";position:absolute;left:13px;top:46px;bottom:-20px;width:1px;background:var(--line2)}
@@ -250,6 +254,8 @@
     <div>
       <div class="label">연구소 소개</div>
       <h2>수능 점수만으로는<br>보이지 않는 것들.</h2>
+      <p class="ias-def"><b>IAS</b><span class="en">Individualized Academic Strategy</span>
+        <span class="ko">학생 개개인에게 최적화된 수학 학습·입시 전략</span></p>
       <p class="body">영재고를 준비할 만한지, 수리논술에 적합한지, 지금의 선행이 맞는지는
         <b>한 단계 위에서 봐야</b> 정확합니다. 대학수학(미적분학·해석학)까지 가르치는 강사가
         그 기준으로 학생의 수학을 진단하고, 갈 수 있는 길을 잡아드립니다.</p>
@@ -408,7 +414,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap f-in">
-    <div><b>이현 IAS 입시수학 연구소</b><br>
+    <div><b>이현 IAS 입시수학 연구소</b> <span style="color:var(--dim)">· Individualized Academic Strategy</span><br>
       강남구 테헤란로 138 성홍타워 (역삼역 도보) · <span class="todo-mark">사업자등록번호·연락처 확정 예정</span></div>
     <div>© 2026 이현 IAS 입시수학 연구소</div>
   </div>
