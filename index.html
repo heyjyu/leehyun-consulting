@@ -197,6 +197,41 @@
   .f-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:flex-end}
   footer b{color:var(--muted);font-weight:600}
   .todo-mark{color:#c9972f}
+  /* 로고 칩 (메가스터디·유니스터디) */
+  .logochip{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:7px;padding:6px 12px;margin-bottom:16px}
+  .logochip img{height:15px;display:block;width:auto}
+  .logochip img.mega{height:13px}
+  .inst .logochip{margin:0 0 14px}
+  /* 4 카테고리 카드 */
+  .cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+  .cat{background:var(--bg);border:1px solid var(--line);border-radius:13px;padding:24px;transition:.16s}
+  .cat:hover{border-color:var(--line2)}
+  .cat .ptag{display:inline-block;font-family:var(--serif);font-size:15px;font-weight:700;padding:5px 14px;border-radius:8px;margin-bottom:16px}
+  .cat ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .cat li{color:var(--txt);font-size:15px;padding-left:18px;position:relative;line-height:1.5}
+  .cat li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .cat li .note{display:block;font-size:12.5px;color:var(--muted);margin-top:3px}
+  @media(max-width:780px){.cat-grid{grid-template-columns:1fr}}
+  /* 진단 프로세스 STEP */
+  .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+  .step-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+  .step-card .sn{font-family:var(--serif);color:var(--blue);font-weight:700;margin-bottom:16px;line-height:1}
+  .step-card .sn .lbl{font-size:11.5px;letter-spacing:.14em;display:block;margin-bottom:4px;opacity:.85}
+  .step-card .sn .no{font-size:32px}
+  .step-card h3{font-size:16.5px;font-weight:700;margin-bottom:9px}
+  .step-card .meta{color:var(--blue);font-size:12.5px;font-weight:600;margin-bottom:11px}
+  .step-card p{color:var(--muted);font-size:14px;line-height:1.65}
+  @media(max-width:780px){.process-grid{grid-template-columns:1fr}}
+  /* 후기 갤러리 */
+  .reviews{background:var(--panel)}
+  .rev-scroll{display:flex;gap:16px;overflow-x:auto;margin-top:30px;padding-bottom:14px;scroll-snap-type:x mandatory}
+  .rev-scroll::-webkit-scrollbar{height:8px}
+  .rev-scroll::-webkit-scrollbar-track{background:transparent}
+  .rev-scroll::-webkit-scrollbar-thumb{background:var(--line2);border-radius:8px}
+  .rev-card{flex:0 0 auto;width:244px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg);scroll-snap-align:start;transition:.16s}
+  .rev-card:hover{border-color:var(--line2)}
+  .rev-card img{width:100%;display:block}
+  .rev-note{color:var(--dim);font-size:13px;margin-top:14px}
 </style>
 </head>
 <body>
@@ -218,7 +253,8 @@
 <section class="hero">
   <div class="wrap hero-in">
     <div>
-      <p class="kicker">유니스터디 <b>메가스터디 대학인강</b> 미적분학 대표강사</p>
+      <span class="logochip"><img src="assets/unistudy_logo.png" alt="메가스터디 대학인강 유니스터디"></span>
+      <p class="kicker">메가스터디 대학인강 <b>유니스터디</b> 미적분학 대표강사</p>
       <h1>막연한 도전 대신,<br><em>정확한 진단</em>부터.</h1>
       <p class="sub">영재고·수리논술·심화수학 — 지금 도전해도 될지,
         대학수학까지 가르치는 강사가 한 단계 위 기준으로 <b>수학 적합도</b>를 진단합니다.</p>
@@ -230,9 +266,9 @@
     <div class="portrait">
       <div class="frame">
         <img src="assets/profile.png" alt="이현 강사">
-        <div class="cap"><b>이현</b>연세대 교육대학원</div>
+        <div class="cap"><b>이현</b>메가스터디 대학인강 유니스터디<br>IAS 수학·입시 컨설팅 연구소<br>연세대학교 교육대학원</div>
       </div>
-      <div class="cap m"><b>이현</b> · 연세대 교육대학원</div>
+      <div class="cap m"><b>이현</b> · 메가스터디 대학인강 유니스터디 · 연세대 교육대학원</div>
     </div>
   </div>
 </section>
@@ -255,8 +291,8 @@
         <h3>지금 선행 진도, 제대로 가고 있나요?</h3>
         <p>진도가 빠른 건지 헛도는 건지, 이해의 깊이를 들여다봐야 압니다.</p></div></div>
       <div class="qa"><div class="num">04</div><div>
-        <h3>편입·AP·대학 미적분, 어디서 막히나요?</h3>
-        <p>대학수학까지 가르치는 강사가 개념의 어느 층에서 끊겼는지 정확히 짚습니다.</p></div></div>
+        <h3>리터니·국제트랙, 국내 입시 중 어디로 가야 하나요?</h3>
+        <p>해외 경험과 국내 입시 사이에서, AP·IB 국제트랙과 국내 정시·수리논술 중 학생에게 맞는 길을 진단해 방향을 잡습니다.</p></div></div>
     </div>
   </div>
 </section>
@@ -274,9 +310,9 @@
         그 기준으로 학생의 수학을 진단하고, 갈 수 있는 길을 잡아드립니다.</p>
     </div>
     <div class="flow">
-      <div class="row"><div class="mk">1</div><div><b>진단</b><span>현재 실력·이해 깊이·적합도를 정밀 점검</span></div></div>
-      <div class="row"><div class="mk">2</div><div><b>방향 설정</b><span>도전 가능 여부와 가장 효율적인 경로 제시</span></div></div>
-      <div class="row"><div class="mk">3</div><div><b>정기 점검</b><span>1회 단발 또는 월 1회 정기 체크로 궤도 유지</span></div></div>
+      <div class="row"><div class="mk">1</div><div><b>진단</b><span>현재 실력·이해 깊이·적합도를 정밀하게 점검</span></div></div>
+      <div class="row"><div class="mk">2</div><div><b>피드백</b><span>진단과 동시에, 학생이 스스로 현 위치를 메타인지하도록</span></div></div>
+      <div class="row"><div class="mk">3</div><div><b>방향 설정</b><span>갈 수 있는 길과 가장 효율적인 경로를 제시</span></div></div>
     </div>
   </div>
 </section>
@@ -286,17 +322,65 @@
   <div class="wrap">
     <div class="label">오프라인 컨설팅 · 유료</div>
     <h2>IAS 진단 프로그램</h2>
-    <div class="prog-grid">
-      <div class="prog"><span class="ptag t-mid">중등 · 영재</span><b>KMO / 영재고 / 과학고 준비 적합성 진단</b></div>
-      <div class="prog"><span class="ptag t-mid">중등 · 자사고</span><b>전국단위 · 강남권 자사고 준비 적합성 진단</b></div>
-      <div class="prog"><span class="ptag t-hi">고등 · 정시</span><b>고1·2 조기 정시대비 / 고3 정시올인 적합성 진단</b></div>
-      <div class="prog"><span class="ptag t-hi">고등 · 수리논술</span><b>수리논술 / 약술형 논술 적합성 진단</b></div>
-      <div class="prog"><span class="ptag t-hi">고등 · 의학계열</span><b>의학계열 수리논술 적합성 진단</b></div>
-      <div class="prog"><span class="ptag t-int">AP / IB 국제트랙</span><b>리터니 · 국제학교 학생 대상 맞춤 학습 로드맵</b></div>
-      <div class="prog wide"><span class="ptag t-gen">종합 진단</span><b>초등 고학년↑ · 학년무관 학원 선행진도 · 종합 체크<span class="sub">초등은 웩슬러 지능검사지 제출 권장</span></b></div>
+    <div class="cat-grid">
+      <div class="cat">
+        <span class="ptag t-hi">고등</span>
+        <ul>
+          <li>수능 정시올인 적합성</li>
+          <li>수리논술 적합성 <span class="note">의학계열 / 이공계열</span></li>
+        </ul>
+      </div>
+      <div class="cat">
+        <span class="ptag t-mid">중등</span>
+        <ul>
+          <li>KMO · 영재고 · 과학고 · 전사고 적합성</li>
+          <li>사교육 진단 및 현 상황 분석</li>
+        </ul>
+      </div>
+      <div class="cat">
+        <span class="ptag t-gen">초등</span>
+        <ul>
+          <li>사교육 진단 및 영재 발굴</li>
+          <li>학원 선행진도 종합 체크 <span class="note">웩슬러 지능검사 5판 결과지 필수 지참</span></li>
+        </ul>
+      </div>
+      <div class="cat">
+        <span class="ptag t-int">국제트랙</span>
+        <ul>
+          <li>리터니 · 국제학교 학생 대상</li>
+          <li>AP / IB 연계 맞춤 컨설팅</li>
+        </ul>
+      </div>
     </div>
-    <p class="menu-foot">이용 형태 — 1회 단발성 진단 · 월 1회 정기 체크 (유료 · 상담 시 안내) &nbsp;|&nbsp;
-      오프라인 — 강남구 테헤란로 138 성홍타워 (역삼역 도보)</p>
+  </div>
+</section>
+
+<!-- PROCESS (진단 프로세스) -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="label">진단 프로세스</div>
+    <h2>신청부터 레포트까지, 3단계.</h2>
+    <div class="process-grid">
+      <div class="step-card">
+        <div class="sn"><span class="lbl">STEP</span><span class="no">1</span></div>
+        <h3>사전 학부모 상담</h3>
+        <div class="meta">대면 · 30분 · 무료</div>
+        <p>구글폼 신청 후 일정 확인 → 강남구 역삼동 연구소(역삼역 도보 2분)에서 방문 상담으로 진행합니다.</p>
+      </div>
+      <div class="step-card">
+        <div class="sn"><span class="lbl">STEP</span><span class="no">2</span></div>
+        <h3>학생 진단 및 피드백</h3>
+        <div class="meta">대면 · 3시간 · 유료</div>
+        <p>선생님과 1:1 대화 방식, 편안한 분위기에서 진행합니다. 진단과 동시에 수학적 피드백이 이뤄지고, 학생 스스로 현 상황을 메타인지할 수 있도록 구성했습니다.</p>
+      </div>
+      <div class="step-card">
+        <div class="sn"><span class="lbl">STEP</span><span class="no">3</span></div>
+        <h3>최종 분석 레포트</h3>
+        <div class="meta">결과 · 맞춤 전략 제공</div>
+        <p>진단 결과와 맞춤 전략을 레포트로 제공합니다. 이후 정기 학습 컨설팅 연결은 선택 사항입니다.</p>
+      </div>
+    </div>
+    <p class="menu-foot" style="margin-top:22px">사전 학부모 상담 이후 학생 진단 진행 여부는 선택 &nbsp;|&nbsp; 오프라인 — 강남구 역삼동 연구소(역삼역 도보 2분) &nbsp;|&nbsp; 비용은 상담 시 안내(VAT 별도)</p>
   </div>
 </section>
 
@@ -307,7 +391,8 @@
     <div>
       <div class="label">강사 소개</div>
       <h2>이현</h2>
-      <div class="role">유니스터디(메가스터디 대학인강) 미적분학·해석학 대표강사</div>
+      <span class="logochip"><img src="assets/unistudy_logo.png" alt="유니스터디"><img class="mega" src="assets/megastudy_logo.png" alt="메가스터디교육"></span>
+      <div class="role">메가스터디 대학인강 유니스터디 미적분학·해석학 대표강사</div>
       <p class="bio">연세대학교 교육대학원. 수능·내신을 넘어 <b>대학수학까지 가르치는 깊이</b>로,
         학생이 지금 어디에 서 있고 어디까지 갈 수 있는지를 한 단계 위에서 진단합니다.
         “미적분학은 이현” — 복잡한 개념을 가장 명쾌하게.</p>
@@ -374,6 +459,25 @@
       </article>
 
     </div>
+  </div>
+</section>
+
+<!-- REVIEWS (후기) -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="label">실제 후기</div>
+    <h2>학생·학부모님이 직접 남긴 이야기.</h2>
+    <div class="rev-scroll">
+      <a class="rev-card" href="assets/reviews/review1.png" target="_blank" rel="noopener"><img src="assets/reviews/review1.png" alt="컨설팅 후기" loading="lazy"></a>
+      <a class="rev-card" href="assets/reviews/review2.png" target="_blank" rel="noopener"><img src="assets/reviews/review2.png" alt="컨설팅 후기" loading="lazy"></a>
+      <a class="rev-card" href="assets/reviews/review3.png" target="_blank" rel="noopener"><img src="assets/reviews/review3.png" alt="컨설팅 후기" loading="lazy"></a>
+      <a class="rev-card" href="assets/reviews/review4.png" target="_blank" rel="noopener"><img src="assets/reviews/review4.png" alt="컨설팅 후기" loading="lazy"></a>
+      <a class="rev-card" href="assets/reviews/review5.png" target="_blank" rel="noopener"><img src="assets/reviews/review5.png" alt="컨설팅 후기" loading="lazy"></a>
+      <a class="rev-card" href="assets/reviews/review6.png" target="_blank" rel="noopener"><img src="assets/reviews/review6.png" alt="컨설팅 후기" loading="lazy"></a>
+      <a class="rev-card" href="assets/reviews/review7.png" target="_blank" rel="noopener"><img src="assets/reviews/review7.png" alt="컨설팅 후기" loading="lazy"></a>
+      <a class="rev-card" href="assets/reviews/review8.png" target="_blank" rel="noopener"><img src="assets/reviews/review8.png" alt="컨설팅 후기" loading="lazy"></a>
+    </div>
+    <p class="rev-note">← 옆으로 넘겨보세요 · 개인정보는 가림 처리했습니다 · 이미지를 누르면 크게 볼 수 있어요</p>
   </div>
 </section>
 
