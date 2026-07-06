@@ -179,7 +179,7 @@
   .store{background:var(--panel)}
   .store-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
   .prod{background:var(--bg);border:1px solid var(--line);border-radius:13px;overflow:hidden;display:flex;flex-direction:column}
-  .cover{aspect-ratio:3/4.1;position:relative;padding:24px;display:flex;flex-direction:column;justify-content:space-between;color:#eef1f6}
+  .cover{aspect-ratio:3/4.1;position:relative;padding:24px;display:grid;grid-template-rows:auto 1fr auto;place-items:center;text-align:center;color:#eef1f6}
   .cover.c1{background:#16233f}.cover.c2{background:#143230}
   .cover::before{content:"";position:absolute;inset:13px;border:1px solid rgba(255,255,255,.14);border-radius:4px;pointer-events:none}
   .cover .cl{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.72;position:relative}
