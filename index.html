@@ -244,6 +244,10 @@
   .cat ul{list-style:none;display:flex;flex-direction:column;gap:11px}
   .cat li{color:var(--txt);font-size:16px;padding-left:18px;position:relative;line-height:1.5}
   .cat li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .cat:has(.t-hi) li::before{background:#58a0f0}
+  .cat:has(.t-mid) li::before{background:#54c7b8}
+  .cat:has(.t-gen) li::before{background:#d6a95b}
+  .cat:has(.t-int) li::before{background:#a78bfa}
   .cat li .note{display:block;font-size:13.5px;color:var(--muted);margin-top:3px}
   @media(max-width:780px){.cat-grid{grid-template-columns:1fr}}
   /* 진단 프로세스 STEP */
@@ -427,14 +431,14 @@
         </ul>
       </div>
       <div class="cat">
-        <span class="ptag t-gen">초등</span>
+        <span class="ptag t-int">초등</span>
         <ul>
           <li>사교육 진단 및 영재 발굴</li>
           <li>학원 선행진도 종합 체크 <span class="note">웩슬러 지능검사 5판 결과지 필수 지참</span></li>
         </ul>
       </div>
       <div class="cat">
-        <span class="ptag t-int">국제트랙</span>
+        <span class="ptag t-gen">국제트랙</span>
         <ul>
           <li>리터니 · 국제학교 학생 대상</li>
           <li>AP / IB 연계 맞춤 컨설팅</li>
