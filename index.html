@@ -266,6 +266,26 @@
   .rev-card:hover{border-color:var(--line2)}
   .rev-card img{width:100%;display:block}
   .rev-note{color:var(--dim);font-size:13px;margin-top:14px}
+  /* 맛보기 버튼 행 */
+  .buyrow{display:flex;flex-direction:column;gap:8px;margin:0 20px 20px}
+  .buyrow .buy{margin:0;width:100%}
+  /* 맛보기 이메일 모달 */
+  .mb-overlay{position:fixed;inset:0;background:rgba(6,7,9,.74);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+  .mb-overlay.open{display:flex}
+  .mb-card{background:var(--panel);border:1px solid var(--line2);border-radius:16px;max-width:420px;width:100%;padding:30px 28px;position:relative}
+  .mb-card h3{font-family:var(--serif);font-size:22px;margin-bottom:6px}
+  .mb-sub{color:var(--muted);font-size:14.5px;margin-bottom:20px;line-height:1.55}
+  .mb-field{margin-bottom:14px}
+  .mb-field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+  .mb-input,.mb-select{width:100%;background:var(--bg);border:1px solid var(--line2);border-radius:9px;padding:12px 14px;color:var(--txt);font-size:15px;font-family:inherit}
+  .mb-input:focus,.mb-select:focus{outline:none;border-color:var(--blue)}
+  .mb-consent{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--muted);margin:2px 0 18px;cursor:pointer;line-height:1.5}
+  .mb-consent input{margin-top:2px;flex:none}
+  .mb-actions{display:flex;gap:10px}
+  .mb-actions .btn{flex:1;justify-content:center}
+  .mb-msg{font-size:13.5px;margin-top:12px;min-height:18px;line-height:1.5}
+  .mb-msg.ok{color:#54c7b8}.mb-msg.err{color:#e2777a}
+  @media(max-width:480px){.mb-card{padding:26px 20px}}
 </style>
 <script type="application/ld+json">
 {
@@ -496,7 +516,10 @@
           <div class="pdesc">2023~2026 연세대 수리논술 기출을 강사 직접 풀이로. 출제 패턴과 접근법까지.</div>
           <div class="pmeta"><span class="price tbd">가격 준비중</span><span class="rev">출시 예정</span></div>
         </div>
-        <a href="#apply" class="btn btn-primary buy">구매 문의</a>
+        <div class="buyrow">
+          <button type="button" class="btn btn-line buy sample-btn" data-book="연세대 수리논술 Part 1">무료 맛보기 받기</button>
+          <a href="#apply" class="btn btn-primary buy">구매 문의</a>
+        </div>
       </article>
 
       <article class="prod">
@@ -511,7 +534,10 @@
           <div class="pdesc">Precalculus Algebra. AP·국제코스 학생을 위한 기초 대수 완성 자료.</div>
           <div class="pmeta"><span class="price tbd">가격 준비중</span><span class="rev">출시 예정</span></div>
         </div>
-        <a href="#apply" class="btn btn-primary buy">구매 문의</a>
+        <div class="buyrow">
+          <button type="button" class="btn btn-line buy sample-btn" data-book="AP Calculus Part 1">무료 맛보기 받기</button>
+          <a href="#apply" class="btn btn-primary buy">구매 문의</a>
+        </div>
       </article>
 
       <article class="prod">
@@ -526,7 +552,7 @@
           <div class="pdesc">받아보고 유료 자료·상담으로 이어지는 입구. 차가운 방문자의 연락처를 남기는 무료 자료.</div>
           <div class="pmeta"><span class="price">무료</span><span class="rev">준비중</span></div>
         </div>
-        <a href="#apply" class="btn btn-line buy">무료로 받기</a>
+        <button type="button" class="btn btn-line buy sample-btn" data-book="">무료 맛보기 받기</button>
       </article>
 
     </div>
@@ -600,6 +626,67 @@
     <div>© 2026 이현 IAS 수학·입시 컨설팅 연구소</div>
   </div>
 </footer>
+
+<!-- 무료 맛보기 이메일 모달 -->
+<div class="mb-overlay" id="mbOverlay" aria-hidden="true">
+  <div class="mb-card" role="dialog" aria-modal="true" aria-labelledby="mbTitle">
+    <h3 id="mbTitle">무료 맛보기 받기</h3>
+    <p class="mb-sub">이메일을 남겨주시면 맛보기 자료를 바로 보내드립니다.</p>
+    <div class="mb-field">
+      <label for="mbBook">자료</label>
+      <select class="mb-select" id="mbBook">
+        <option value="연세대 수리논술 Part 1">연세대 수리논술 Part 1</option>
+        <option value="AP Calculus Part 1">AP Calculus Part 1</option>
+      </select>
+    </div>
+    <div class="mb-field">
+      <label for="mbEmail">이메일</label>
+      <input class="mb-input" id="mbEmail" type="email" placeholder="name@example.com" autocomplete="email">
+    </div>
+    <label class="mb-consent"><input type="checkbox" id="mbConsent"><span>개인정보(이메일) 수집·이용에 동의합니다. 자료 발송·안내 목적, 보유 1년.</span></label>
+    <div class="mb-actions">
+      <button type="button" class="btn btn-line" id="mbCancel">취소</button>
+      <button type="button" class="btn btn-primary" id="mbSubmit">자료 받기</button>
+    </div>
+    <div class="mb-msg" id="mbMsg" role="status"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ★ 웹앱 배포 후 .../exec URL 을 여기에 넣으세요
+  var ENDPOINT = "";
+  var ov=document.getElementById('mbOverlay'), bookSel=document.getElementById('mbBook'),
+      emailIn=document.getElementById('mbEmail'), consent=document.getElementById('mbConsent'),
+      msg=document.getElementById('mbMsg'), submitBtn=document.getElementById('mbSubmit');
+  function openModal(book){
+    if(book){bookSel.value=book;}
+    msg.textContent=''; msg.className='mb-msg'; emailIn.value=''; consent.checked=false;
+    ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+    setTimeout(function(){emailIn.focus();},50);
+  }
+  function closeModal(){ov.classList.remove('open'); ov.setAttribute('aria-hidden','true');}
+  document.querySelectorAll('.sample-btn').forEach(function(b){
+    b.addEventListener('click',function(){openModal(b.getAttribute('data-book'));});
+  });
+  document.getElementById('mbCancel').addEventListener('click',closeModal);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  submitBtn.addEventListener('click',function(){
+    var email=emailIn.value.trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){msg.className='mb-msg err';msg.textContent='이메일 주소를 정확히 입력해주세요.';return;}
+    if(!consent.checked){msg.className='mb-msg err';msg.textContent='개인정보 수집에 동의해주세요.';return;}
+    if(!ENDPOINT){msg.className='mb-msg err';msg.textContent='발송 준비 중입니다. 잠시 후 다시 시도해주세요.';return;}
+    submitBtn.disabled=true; msg.className='mb-msg'; msg.textContent='보내는 중…';
+    fetch(ENDPOINT,{method:'POST',mode:'no-cors',
+      headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
+      body:new URLSearchParams({email:email,book:bookSel.value,src:'landing'}).toString()})
+    .then(function(){msg.className='mb-msg ok';msg.textContent='신청 완료! 메일함(스팸함도) 확인해주세요.';
+      submitBtn.disabled=false; setTimeout(closeModal,2400);})
+    .catch(function(){msg.className='mb-msg err';msg.textContent='전송 실패. 잠시 후 다시 시도해주세요.';submitBtn.disabled=false;});
+  });
+})();
+</script>
 
 </body>
 </html>
