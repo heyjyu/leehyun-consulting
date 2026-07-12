@@ -52,7 +52,7 @@
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.62;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
   section{padding:80px 0}
   .label{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
   .label::before{content:"";width:26px;height:1px;background:var(--line2)}
@@ -66,7 +66,7 @@
 
   /* NAV */
   header.nav{position:sticky;top:0;z-index:50;background:rgba(12,13,16,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav-in{max-width:var(--max);margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between}
+  .nav-in{max-width:var(--max);margin:0 auto;padding:15px 18px;display:flex;align-items:center;justify-content:space-between}
   .brand{font-weight:700;font-size:16px;letter-spacing:-.01em}
   .brand .ln{color:var(--blue)}
   .nav-links{display:flex;gap:28px;align-items:center}
@@ -79,7 +79,7 @@
   .hero{position:relative;overflow:hidden;padding:0}
   .hero::before{content:"";position:absolute;top:-30%;right:-10%;width:520px;height:520px;
     background:radial-gradient(circle,rgba(80,120,230,.16),transparent 62%);pointer-events:none}
-  .hero-in{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;padding:92px 28px 84px;position:relative}
+  .hero-in{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;padding:92px 18px 84px;position:relative}
   .hero .kicker{color:var(--muted);font-size:14px;font-weight:500;margin-bottom:22px}
   .hero .kicker b{color:var(--txt);font-weight:600}
   .hero h1{font-family:var(--serif);font-weight:700;font-size:46px;line-height:1.34;letter-spacing:-.015em}
@@ -95,7 +95,7 @@
   .portrait .cap b{color:var(--txt);font-weight:600;display:block;font-size:14px;margin-bottom:1px}
   .portrait .cap.m{display:none}
   @media(max-width:780px){
-    .hero-in{grid-template-columns:1fr;gap:28px;padding:34px 28px 52px;text-align:center}
+    .hero-in{grid-template-columns:1fr;gap:28px;padding:34px 18px 52px;text-align:center}
     .hero .kicker{margin-bottom:16px}
     .hero h1{font-size:31px;line-height:1.42}
     .hero .sub{font-size:15.5px;margin:18px auto 26px}
@@ -541,18 +541,21 @@
       </article>
 
       <article class="prod">
-        <div class="cover" style="background:#1a2336">
-          <div class="cl" style="opacity:.82">Free · 무료자료</div>
-          <div class="ct">무료<br>맛보기 자료</div>
-          <div class="cb">구독자 무료 발송</div>
+        <div class="cover" style="background:#241a33">
+          <div class="cl">IB · Mathematics</div>
+          <div class="ct">IB Math<br>AA · AI<br>Part 1</div>
+          <div class="cb">HL · SL 대비</div>
         </div>
         <div class="pbody">
-          <div class="ptags"><span class="ptag nw">무료</span><span class="ptag dot">PDF</span></div>
-          <div class="ptitle">무료 맛보기 학습자료</div>
-          <div class="pdesc">받아보고 유료 자료·상담으로 이어지는 입구. 차가운 방문자의 연락처를 남기는 무료 자료.</div>
-          <div class="pmeta"><span class="price">무료</span><span class="rev">준비중</span></div>
+          <div class="ptags"><span class="ptag nw">NEW</span><span class="ptag dot">전자책</span><span class="ptag dot">약 50p</span></div>
+          <div class="ptitle">IB Math Part 1</div>
+          <div class="pdesc">IB Mathematics AA·AI 핵심 정리. 국제학교·IB 과정 학생을 위한 대비 자료.</div>
+          <div class="pmeta"><span class="price tbd">가격 준비중</span><span class="rev">출시 예정</span></div>
         </div>
-        <button type="button" class="btn btn-line buy sample-btn" data-book="">무료 맛보기 받기</button>
+        <div class="buyrow">
+          <button type="button" class="btn btn-line buy sample-btn" data-book="IB Math Part 1">무료 맛보기 받기</button>
+          <a href="#apply" class="btn btn-primary buy">구매 문의</a>
+        </div>
       </article>
 
     </div>
@@ -637,6 +640,7 @@
       <select class="mb-select" id="mbBook">
         <option value="연세대 수리논술 Part 1">연세대 수리논술 Part 1</option>
         <option value="AP Calculus Part 1">AP Calculus Part 1</option>
+        <option value="IB Math Part 1">IB Math Part 1</option>
       </select>
     </div>
     <div class="mb-field">
